@@ -17,14 +17,19 @@ object PdfPPMain {
           "Done"
         }
         case Array("vsplit", intoPages, in, out) => vsplitPages(in, out, intoPages.toInt); "Done"
-        case Array("margins", margins, in, out) => setMargins(in, out, parseMargins(margins)); "Done"
         case _ =>
-          "Usage: pdfpp <command> [command-options] <input.pdf> <output.pdf>\n" +
-          "Example commands with options:\n" +
-          "   stamp \"Hello, world!\"  - adds the message in the top of the document\n" +
-          "   vsplit 2   - vertically split every page in two\n" +
-          "   rotate -90\n" +
-          "   crop 100,100,200,200     - crop margins: left,top,right,bottom\n"
+          """
+Usage: pdfpp <command> [command-options] <input.pdf> <output.pdf>
+List of supported commands with options:
+ vsplit <n>
+    Vertically split every page into n parts.
+ rotate <degrees>
+    Rotate every page by the specified angle counterclockwise.
+ crop <left,top,right,bottom>
+    Crop every page by the given margins
+ stamp <message>
+    Add the specified message in the top of every page.
+          """
       }
     } catch {
       case (e:IOException) => "Error: " + e.getMessage
@@ -117,8 +122,6 @@ object PdfPPMain {
       new Rectangle(left, top - segh * (i + 1), right, top - segh * i)
     })
     if (!tempFile.delete) tempFile.deleteOnExit
-
-   // printf("Saving to file '%s'\n", dest)
   }
 
   def stampPdf(src:String, dest:String, message:String) {
