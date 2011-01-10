@@ -19,7 +19,7 @@ object PdfPPMain {
         case Array("vsplit", intoPages, in, out) => vsplitPages(in, out, intoPages.toInt); "Done"
         case _ =>
           """
-Usage: pdfpp <command> [command-options] <input.pdf> <output.pdf>
+Usage: java -jar pdfpp.jar <command> [command-options] <input.pdf> <output.pdf>
 List of supported commands with options:
  vsplit <n>
     Vertically split every page into n parts.

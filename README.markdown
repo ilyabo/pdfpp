@@ -1,9 +1,8 @@
+pdfpp
+=====
 pdfpp is a command-line tool for pdf postprocessing.
 
-To run use:
-java -jar pdfpp.jar
-
-Usage: pdfpp <command> [command-options] <input.pdf> <output.pdf>
+Usage: java -jar pdfpp.jar <command> [command-options] <input.pdf> <output.pdf>
 List of supported commands with options:
  vsplit <n>
     Vertically split every page into n parts.
