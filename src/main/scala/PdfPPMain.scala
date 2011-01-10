@@ -63,8 +63,8 @@ List of supported commands with options:
       val page = reader.getPageN(i)
       val crop = page.get(PdfName.CROPBOX) match {
         case a:PdfArray => Some(new Rectangle(
-            a.getAsNumber(0).intValue, a.getAsNumber(1).intValue,
-            a.getAsNumber(2).intValue, a.getAsNumber(3).intValue))
+            a.getAsNumber(0).floatValue, a.getAsNumber(1).floatValue,
+            a.getAsNumber(2).floatValue, a.getAsNumber(3).floatValue))
         case _ => None
       }
       page.put(PdfName.CROPBOX, new PdfRectangle(getCropRect(i, reader.getPageSize(page), crop)))
