@@ -28,7 +28,7 @@ List of supported commands with options:
  crop <left,top,right,bottom>
     Crop every page by the given margins
  stamp <message>
-    Add the specified message in the top of every page.
+    Add the specified message at the top of every page.
           """
       }
     } catch {
