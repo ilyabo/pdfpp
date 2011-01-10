@@ -6,17 +6,22 @@ Usage: java -jar pdfpp.jar <command> [command-options] <input.pdf> <output.pdf>
 
 List of supported commands with options:
 
-vsplit <n>
+_vsplit &lt;n&gt;_
+
   Vertically split every page into n parts.
 
-rotate <degrees>
+_rotate &lt;degrees&gt;_
+
   Rotate every page by the specified angle counterclockwise.
 
-crop <left,top,right,bottom>
+_crop &lt;left,top,right,bottom&gt;_
+
   Crop every page by the given margins
 
-stamp <message>
+_stamp &lt;message&gt;_
+
   Add the specified message at the top of every page.
+
 
 This tool is intented mainly for improving the PDF reading experience on e-book readers (e.g. Sony Reader, or Kindle). The screen of a reader is not large enough to fit a page of a not-especially prepared PDF document. Zooming often requres "reflowing" the document content. Such reflowing is destructive for tables or any special formatting which especially makes reading of computer-related books very unpleasant.
 
